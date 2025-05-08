@@ -20,19 +20,11 @@ export default defineConfig({
         vuetify({ autoImport: true }),
     ],
     server: {
-        proxy: {
-            '/api/banks': {
-                target: 'https://bank.teraren.com',
-                changeOrigin: true,
-                secure: false,
-                rewrite: (path) => path.replace(/^\/api/, '')
-            },
-        },
         host: '0.0.0.0', // Allows access from the local network
         port: 5173, // Ensure this port is open
         cors: true, // Enables CORS
         hmr: {
-            host: '192.168.0.106',
+            host: '192.168.0.105',
         },
         watch: {
             usePolling: true,

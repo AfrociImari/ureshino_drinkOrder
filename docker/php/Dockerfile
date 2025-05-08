@@ -37,7 +37,7 @@ COPY . /src/
 RUN mkdir -p /src/storage && chown -R www-data:www-data /src/storage
 
 # Install Node.js dependencies and compile assets for production
-RUN npm install
+RUN npm install ----legacy-peer-deps
 
 # Install PHP dependencies using Composer
 RUN composer install --no-scripts --prefer-dist
